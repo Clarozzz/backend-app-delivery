@@ -5,6 +5,8 @@ import cors from 'cors';
 import { rutasUsuarios } from './routers/usuarios.routers';
 import { rutasCategorias } from './routers/categorias.routers';
 import { rutasEmpresas } from './routers/empresas.routers';
+import { rutasProductos } from './routers/productos.routers';
+import { rutasOrdenes } from './routers/ordenes.routers';
 
 dotenv.config();
 const db: Database = new Database();
@@ -19,6 +21,8 @@ app.use(express.urlencoded({ extended: true }));
 app.use('/usuarios', rutasUsuarios);
 app.use('/categorias', rutasCategorias);
 app.use('/empresas', rutasEmpresas);
+app.use('/productos', rutasProductos);
+app.use('/ordenes', rutasOrdenes);
 
 app.get('/', (req: Request, res: Response) => {
     res.send('Express + TypeScript Server');
