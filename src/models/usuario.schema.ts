@@ -9,8 +9,7 @@ const schema = new mongoose.Schema<Usuario>({
     contrasena: String,
     direccion: String,
     metodoPago: Object,
-    ordenes: [],
-    total: Number
+    ordenes: []
 })
 
 export const UsuariosSchema = mongoose.model('usuarios', schema);

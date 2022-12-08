@@ -11,7 +11,6 @@ export const crearUsuario = async (req: Request, res: Response) => {
         direccion: req.body.direccion,
         metodoPago: req.body.metodoPago,
         ordenes: req.body.ordenes,
-        total: req.body.total
     });
     const result = await nuevoUsuario.save();
     res.send(result);
@@ -20,6 +19,12 @@ export const crearUsuario = async (req: Request, res: Response) => {
 
 export const obtenerUsuario = async (req: Request, res: Response) => {
     const result = await UsuariosSchema.find({ _id: req.params.id });
+    res.send(result.length === 1 ? result[0] : {});
+    res.end();
+}
+
+export const obtenerUsuarioPorUsuario = async (req: Request, res: Response) => {
+    const result = await UsuariosSchema.find({ usuario: req.params.usuario });
     res.send(result.length === 1 ? result[0] : {});
     res.end();
 }
@@ -41,7 +46,6 @@ export const actualizarUsuario = async (req: Request, res: Response) => {
         direccion: req.body.direccion,
         metodoPago: req.body.metodoPago,
         ordenes: req.body.ordenes,
-        total: req.body.total
     });
     res.send(result);
     res.end();

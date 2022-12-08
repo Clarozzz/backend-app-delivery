@@ -7,5 +7,4 @@ export interface Usuario {
     direccion: string;
     metodoPago: Object;
     ordenes: [];
-    total: number;
 }
