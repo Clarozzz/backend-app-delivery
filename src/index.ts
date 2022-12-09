@@ -8,6 +8,8 @@ import { rutasEmpresas } from './routers/empresas.routers';
 import { rutasProductos } from './routers/productos.routers';
 import { rutasOrdenes } from './routers/ordenes.routers';
 import { rutasAdministradores } from './routers/administradores.routers';
+import { rutasRepartidoresPendientes } from './routers/repartidorespendientes.routers';
+import { rutasRepartidores } from './routers/repartidores.routers';
 
 dotenv.config();
 const db: Database = new Database();
@@ -25,6 +27,8 @@ app.use('/empresas', rutasEmpresas);
 app.use('/productos', rutasProductos);
 app.use('/ordenes', rutasOrdenes);
 app.use('/administradores', rutasAdministradores);
+app.use('/repartidores', rutasRepartidores)
+app.use('/repartidorespendientes', rutasRepartidoresPendientes)
 
 app.get('/', (req: Request, res: Response) => {
     res.send('Express + TypeScript Server');
