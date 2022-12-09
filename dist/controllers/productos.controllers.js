@@ -13,7 +13,7 @@ exports.eliminarProducto = exports.actualizarProducto = exports.obtenerProductoP
 const producto_schema_1 = require("../models/producto.schema");
 const crearProducto = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     const nuevoProducto = new producto_schema_1.ProductosSchema({
-        idProducto: req.body.id,
+        idProducto: req.body.idProducto,
         nombreProducto: req.body.nombreProducto,
         descripcionProducto: req.body.descripcionProducto,
         color: req.body.color,

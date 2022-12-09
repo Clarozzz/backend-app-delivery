@@ -3,7 +3,7 @@ import { EmpresasSchema } from '../models/empresa.schema';
 
 export const crearEmpresa = async (req: Request, res: Response) => {
     const nuevaEmpresa = new EmpresasSchema({
-        idEmpresa: req.body.id,
+        idEmpresa: req.body.idEmpresa,
         nombreEmpresa: req.body.nombreEmpresa,
         descripcion: req.body.descripcion,
         color: req.body.color,
@@ -36,7 +36,7 @@ export const obtenerTodasEmpresas = async (req: Request, res: Response) => {
 
 export const actualizarEmpresas = async (req: Request, res: Response) => {
     const result = await EmpresasSchema.updateOne({ _id: req.params.id}, {
-        idEmpresa: req.body.id,
+        idEmpresa: req.body.idEmpresa,
         nombreEmpresa: req.body.nombreEmpresa,
         descripcion: req.body.descripcion,
         color: req.body.color,

@@ -3,7 +3,7 @@ import { ProductosSchema } from '../models/producto.schema';
 
 export const crearProducto = async (req: Request, res: Response) => {
     const nuevoProducto = new ProductosSchema({
-        idProducto: req.body.id,
+        idProducto: req.body.idProducto,
         nombreProducto: req.body.nombreProducto,
         descripcionProducto: req.body.descripcionProducto,
         color: req.body.color,

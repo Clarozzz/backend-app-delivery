@@ -12,6 +12,7 @@ const categorias_routers_1 = require("./routers/categorias.routers");
 const empresas_routers_1 = require("./routers/empresas.routers");
 const productos_routers_1 = require("./routers/productos.routers");
 const ordenes_routers_1 = require("./routers/ordenes.routers");
+const administradores_routers_1 = require("./routers/administradores.routers");
 dotenv_1.default.config();
 const db = new database_1.Database();
 const app = (0, express_1.default)();
@@ -24,6 +25,7 @@ app.use('/categorias', categorias_routers_1.rutasCategorias);
 app.use('/empresas', empresas_routers_1.rutasEmpresas);
 app.use('/productos', productos_routers_1.rutasProductos);
 app.use('/ordenes', ordenes_routers_1.rutasOrdenes);
+app.use('/administradores', administradores_routers_1.rutasAdministradores);
 app.get('/', (req, res) => {
     res.send('Express + TypeScript Server');
 });
