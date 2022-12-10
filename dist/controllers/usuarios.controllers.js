@@ -13,7 +13,7 @@ exports.actualizarUsuario = exports.obtenerTodosUsuarios = exports.obtenerUsuari
 const usuario_schema_1 = require("../models/usuario.schema");
 const crearUsuario = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     const nuevoUsuario = new usuario_schema_1.UsuariosSchema({
-        idUsuario: req.body.id,
+        idUsuario: req.body.idUsuario,
         nombre: req.body.nombre,
         apellido: req.body.apellido,
         usuario: req.body.usuario,
@@ -48,7 +48,7 @@ const obtenerTodosUsuarios = (req, res) => __awaiter(void 0, void 0, void 0, fun
 exports.obtenerTodosUsuarios = obtenerTodosUsuarios;
 const actualizarUsuario = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     const result = yield usuario_schema_1.UsuariosSchema.updateOne({ _id: req.params.id }, {
-        idUsuario: req.body.id,
+        idUsuario: req.body.idUsuario,
         nombre: req.body.nombre,
         apellido: req.body.apellido,
         usuario: req.body.usuario,

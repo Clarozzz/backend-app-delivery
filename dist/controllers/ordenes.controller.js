@@ -54,7 +54,7 @@ const actualizarOrden = (req, res) => __awaiter(void 0, void 0, void 0, function
 });
 exports.actualizarOrden = actualizarOrden;
 const eliminarOrden = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
-    const result = yield orden_schema_1.OrdenesSchema.remove({ _id: req.params.id });
+    const result = yield orden_schema_1.OrdenesSchema.deleteOne({ _id: req.params.id });
     res.send(result);
     res.end();
 });

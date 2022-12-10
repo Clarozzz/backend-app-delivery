@@ -58,7 +58,7 @@ const actualizarProducto = (req, res) => __awaiter(void 0, void 0, void 0, funct
 });
 exports.actualizarProducto = actualizarProducto;
 const eliminarProducto = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
-    const result = yield producto_schema_1.ProductosSchema.remove({ _id: req.params.id });
+    const result = yield producto_schema_1.ProductosSchema.deleteOne({ _id: req.params.id });
     res.send(result);
     res.end();
 });

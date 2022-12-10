@@ -36,7 +36,7 @@ export const obtenerTodasEmpresas = async (req: Request, res: Response) => {
 
 export const actualizarEmpresas = async (req: Request, res: Response) => {
     const result = await EmpresasSchema.updateOne({ _id: req.params.id}, {
-        idEmpresa: req.body.idEmpresa,
+        idEmpresa: req.body.id,
         nombreEmpresa: req.body.nombreEmpresa,
         descripcion: req.body.descripcion,
         color: req.body.color,
@@ -48,7 +48,7 @@ export const actualizarEmpresas = async (req: Request, res: Response) => {
 }
 
 export const eliminarEmpresa = async (req: Request, res: Response) => {
-    const result = await EmpresasSchema.remove({ _id: req.params.id});
+    const result = await EmpresasSchema.deleteOne({ _id: req.params.id});
     res.send(result);
     res.end();
 }

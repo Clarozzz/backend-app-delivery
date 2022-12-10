@@ -46,7 +46,7 @@ const obtenerTodasEmpresas = (req, res) => __awaiter(void 0, void 0, void 0, fun
 exports.obtenerTodasEmpresas = obtenerTodasEmpresas;
 const actualizarEmpresas = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     const result = yield empresa_schema_1.EmpresasSchema.updateOne({ _id: req.params.id }, {
-        idEmpresa: req.body.idEmpresa,
+        idEmpresa: req.body.id,
         nombreEmpresa: req.body.nombreEmpresa,
         descripcion: req.body.descripcion,
         color: req.body.color,
@@ -58,7 +58,7 @@ const actualizarEmpresas = (req, res) => __awaiter(void 0, void 0, void 0, funct
 });
 exports.actualizarEmpresas = actualizarEmpresas;
 const eliminarEmpresa = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
-    const result = yield empresa_schema_1.EmpresasSchema.remove({ _id: req.params.id });
+    const result = yield empresa_schema_1.EmpresasSchema.deleteOne({ _id: req.params.id });
     res.send(result);
     res.end();
 });

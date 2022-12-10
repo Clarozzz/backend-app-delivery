@@ -48,7 +48,7 @@ export const actualizarProducto = async (req: Request, res: Response) => {
 }
 
 export const eliminarProducto = async (req: Request, res: Response) => {
-    const result = await ProductosSchema.remove({ _id: req.params.id});
+    const result = await ProductosSchema.deleteOne({ _id: req.params.id});
     res.send(result);
     res.end();
 }

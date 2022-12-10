@@ -44,7 +44,7 @@ export const actualizarOrden = async (req: Request, res: Response) => {
 }
 
 export const eliminarOrden = async (req: Request, res: Response) => {
-    const result = await OrdenesSchema.remove({ _id: req.params.id});
+    const result = await OrdenesSchema.deleteOne({ _id: req.params.id});
     res.send(result);
     res.end();
 }

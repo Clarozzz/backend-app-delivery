@@ -3,7 +3,7 @@ import { UsuariosSchema } from '../models/usuario.schema';
 
 export const crearUsuario = async (req: Request, res: Response) => {
     const nuevoUsuario = new UsuariosSchema({
-        idUsuario: req.body.id,
+        idUsuario: req.body.idUsuario,
         nombre: req.body.nombre,
         apellido: req.body.apellido,
         usuario: req.body.usuario,
@@ -38,7 +38,7 @@ export const obtenerTodosUsuarios = async (req: Request, res: Response) => {
 
 export const actualizarUsuario = async (req: Request, res: Response) => {
     const result = await UsuariosSchema.updateOne({ _id: req.params.id }, {
-        idUsuario: req.body.id,
+        idUsuario: req.body.idUsuario,
         nombre: req.body.nombre,
         apellido: req.body.apellido,
         usuario: req.body.usuario,
